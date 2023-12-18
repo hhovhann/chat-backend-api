@@ -4,7 +4,7 @@ Chat Server Rest API service project for Spring Boot
 ## Software Environment
 
 - Java 21
-- MongoDb database
+- MongoDb
 - WebSockets
 - Spring Boot 3.2.0
 - Maven 3.9.5
@@ -45,3 +45,7 @@ System designed as a Spring Boot Web Application. Provides Rest API endpoints an
 
 ## Software Design and Diagram
 - TODO
+
+
+## References
+Thanks [Ali Bouali](https://github.com/ali-bouali) for the interesting materials on youtube and practical examples

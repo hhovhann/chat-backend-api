@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: 'mongo'
+    container_name: mongo_db
+    ports:
+      - ${MONGO_LOCAL_PORT}:${MONGO_DOCKER_PORT}
+    environment:
+      MONGO_INITIDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITIDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    volumes:
+      - mongo-data:/var/lib/mongo/data
+  mongo-express:
+    image: 'mongo-express'
+    container_name: mongo-express
+    restart: always
+    ports:
+      - ${MONGO_EXPRESS_LOCAL_PORT}:${MONGO_EXPRESS_DOCKER_PORT}
+    environment:
+     ME_CONFIG_MONGODB_USERNAME: ${MONGO_EXPRESS_USER}
+     ME_CONFIG_MONGODB_PASSWORD: ${MONGO_EXPRESS_PASSWORD}
+     ME_CONFIG_MONGODB_SERVER: ${MONGO_EXPRESS_SERVER}
+
+volumes:
+  mongo-data: {}

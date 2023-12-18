@@ -10,86 +10,24 @@ Chat Server Rest API service project for Spring Boot
 - Maven 3.9.5
 
 ## Software Structure
-- feature_name(feed) 
+- feature_name(user) 
   - controller
-  - dto
-  - entity
+  - document
+  - enums
   - exception
-  - mapper
   - repository
   - service
+...
 
 ## Software Behaviour
-System designed as a Spring Boot Web Application. Provides Rest API with following endpoints:
+System designed as a Spring Boot Web Application. Provides Rest API endpoints and Send for the User Registration, ChatMessages Topics:
 
 1. User Registration: Add a feature for users to sign up with their email, name, password, and a unique username
-``` 
-POST http://localhost:8080/users/api/v1/signup
-
-REQUEST BODY:
-{
-    "email" : "user_email@gmail.com",
-    "name" : "User Full Name",
-    "password" : "my_password",
-    "username" : "unique_username"
-}
-    
-RESPONSE BODY:
-{
-    .........
-}
-```
-
 2. User Login: Create a login system where users can sign in with their email and password.
-``` 
-POST http://localhost:8080/users/api/v1/login
-
-REQUEST BODY:
-{
-    "email" : "user_email@gmail.com",
-    "password" : "unique_username"
-}
-    
-RESPONSE BODY:
-{
-    .........
-}
-```
-
 3. Search for Other Users: Make a simple search tool to find other users by their usernames.
-``` 
-GET http://localhost:8080/users/api/v1/search?username=my_username
-```
-
 4. Chat Message: Allow users to start chatting with someone they find.
-``` 
-POST http://localhost:8080/users/api/v1/chat
-
-REQUEST BODY:
-{
-    .........
-}
-    
-RESPONSE BODY:
-{
-    .........
-}
-```
-
 5. Show All Message History:  Save chat messages in a database. - Let users see their chat history in an easy-to-read way.
-``` 
-GET http://localhost:8080/users/api/v1/chat/messages
 
-REQUEST BODY:
-{
-    .........
-}
-    
-RESPONSE BODY:
-{
-    .........
-}
-```
 
 ## Software Setup and Run:  Docker containers
 - Create .env file from the root project with
